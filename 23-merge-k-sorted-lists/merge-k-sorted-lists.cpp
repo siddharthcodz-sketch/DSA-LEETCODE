@@ -25,12 +25,18 @@ public:
             return h2;
         }
     }
-    ListNode* mergeKLists(vector<ListNode*>& lists) {
-    ListNode* ans = nullptr;
-    for(auto it:lists){
-        ans = mergeLinkList(ans,it);
+
+    ListNode* partision(int start,int end,vector<ListNode*>&lists){
+        if(start > end) return NULL;
+        if(start == end) return lists[start];
+        int mid = start+ (end-start)/2;
+        ListNode* l1 = partision(start,mid,lists);
+        ListNode* l2 = partision(mid+1,end,lists);
+        return mergeLinkList(l1,l2);
     }
-    return ans;
-        
+
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        int n = lists.size();
+        return partision(0,n-1,lists);
     }
 };
