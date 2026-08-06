@@ -8,15 +8,9 @@ public:
             arr[i] = {nums1[i],i};
         }
 
-        // for (int i=0;i<n;i++) {
-        // cout << arr[i].first << " "<<arr[i].second<<" ,";
-        // }cout << endl;
     
         sort(arr.begin(),arr.end());
 
-        //  for (int i=0;i<n;i++) {
-        // cout << arr[i].first << " "<<arr[i].second<<" ,";
-        // }cout << endl;
 
 
         vector<pair<pair<int,int>,int>> brr(n,{{0,0},0});  
@@ -24,26 +18,10 @@ public:
             brr[i]= {{arr[i].first,arr[i].second},nums2[arr[i].second]};
         }       
 
-        // for (int i=0;i<n;i++){ 
-        // cout << brr[i].first.first<< "." <<brr[i].first.second << " "<<brr[i].second<< " ,";
-        // }cout << endl;
         
         long long sum = 0;
         priority_queue<int, vector<int>,greater<int>>pq;
-        // for(int i=0;i<n;i++){
-        //     ans[brr[i].first.second]=sum;
 
-        //         pq.push(brr[i].second);
-        //         sum += brr[i].second;
-        //         if(pq.size()>k){
-        //             sum -= pq.top();
-        //             pq.pop();
-        //         }
-                
-            // while (!pq.empty()){
-            //     sum+=pq.top();
-            //     pq.pop();
-            // }
         int i = 0;
         while(i < n){
             int j = i;
