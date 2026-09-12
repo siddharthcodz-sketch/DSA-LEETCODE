@@ -11,13 +11,12 @@
  */
 class Solution {
 public:
-//SO ITS A COMPLETE BINARY TREE ALL LEVELS ARE COMPLETY FILLED EXCEPT LAST AND 2. LEFT ASSOCIATIVE
+//SO ITS A COMPLETE BINARY TREE ALL LEVELS ARE COMPLETY FILLED EXCEPT LAST AND 2.LEFT ASSOCIATIVE
     int countLeftHeight(TreeNode* root){
         TreeNode* temp = root;
         int lh = 0;
         while (temp)
         {
-            /* code */
             temp = temp->left;
             lh++;
         }
@@ -26,9 +25,7 @@ public:
     int countRightHeight(TreeNode* root){
         TreeNode* temp = root;
         int rh = 0;
-        while (temp)
-        {
-            /* code */
+        while (temp){
             temp = temp->right;
             rh++;
         }
